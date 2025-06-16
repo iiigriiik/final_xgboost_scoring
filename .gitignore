@@ -1,0 +1,62 @@
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+
+# Data files
+data/*.parquet
+models/*.pkl
+reports/*.png
+reports/*.jsonl
+
+# Virtual Environment
+env/
+venv/
+ENV/
+.env
+.venv
+
+# Jupyter
+.ipynb_checkpoints
+
+# Logs and temp files
+*.log
+*.sqlite3
+
+# Build and distribution
+build/
+dist/
+*.egg
+*.egg-info
+easy_install.*
+setuptools_
+setuptools.pyc
+wheel*
+pip-wheel-metadata
+
+# Docker
+docker-compose*
+docker-build*
+Dockerfile*
+
+# PyInstaller
+*.manifest
+*.spec
+
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+*.iml
+.pydevproject
+
+# Keep empty dirs
+data/*
+!data/.gitkeep
+
+models/*
+!models/.gitkeep
+
+reports/*
+!reports/.gitkeep

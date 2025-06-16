@@ -1,0 +1,7 @@
+pandas
+xgboost
+scikit-learn
+pyarrow
+matplotlib
+seaborn
+joblib
