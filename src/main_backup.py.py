@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from xgboost import XGBClassifier
 from sklearn.model_selection import train_test_split
+import json
+import datetime
 
 
 # Список признако
@@ -89,8 +91,7 @@ def evaluate_model(model, X_test, y_test):
     )
 
 
-import json
-import datetime
+
 
 
 def log_metrics(metrics, filename="reports/metrics_log.jsonl"):

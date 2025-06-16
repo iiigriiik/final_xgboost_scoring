@@ -1,7 +1,7 @@
+fastapi
+uvicorn
 pandas
-xgboost
-scikit-learn
-pyarrow
-matplotlib
-seaborn
 joblib
+scikit-learn
+xgboost
+pyyaml

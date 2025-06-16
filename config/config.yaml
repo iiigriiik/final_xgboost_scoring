@@ -1,0 +1,15 @@
+# config.yaml
+
+features:
+  - risky_tx_count
+  - avg_risk_factor
+  - total_collateral_eth
+  - risk_factor_above_threshold_daily_count
+  - unique_lending_protocol_count
+  - incoming_tx_count
+  - borrow_amount_sum_eth
+  - repay_amount_sum_eth
+  - wallet_age
+  - total_gas_paid_eth
+
+target: defaulter

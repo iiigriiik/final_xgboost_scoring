@@ -1,10 +1,17 @@
 import joblib
-from data_loader import load_data
-from utils import FEATURES, TARGET
+import yaml
 from sklearn.metrics import classification_report, roc_auc_score
+from data_loader import load_data
+from metrics_logger import log_metrics
 
+# Загружаем конфиг
+with open("config/config.yaml", "r") as f:
+    config = yaml.safe_load(f)
 
-MODEL_PATH = "../models/best_xgboost_model.pkl"
+FEATURES = config["features"]
+TARGET = config["target"]
+
+MODEL_PATH = "models/xgboost_model.pkl"
 
 
 def predict_new_data(data_path):
@@ -16,18 +23,13 @@ def predict_new_data(data_path):
     probabilities = model.predict_proba(X)[:, 1]
 
     df['probability'] = probabilities
-    output_path = data_path.replace(
-        ".parquet",
-        "_predicted.parquet"
-    )
+    output_path = data_path.replace(".parquet", "_predicted.parquet")
     df.to_parquet(output_path, index=False)
     print(f"[INFO] Предсказания сохранены в {output_path}")
 
 
 def evaluate_model_from_file(data_path):
     """Оценка модели без переобучения"""
-    from metrics_logger import log_metrics
-
     df = load_data(data_path)
     model = joblib.load(MODEL_PATH)
 

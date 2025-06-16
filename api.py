@@ -4,15 +4,19 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import joblib
 import pandas as pd
+import yaml
+
+# Загрузка конфига
+with open("config/config.yaml", "r") as f:
+    config = yaml.safe_load(f)
+
+FEATURES = config["features"]
 
 # Загрузка модели
 try:
     model = joblib.load("models/best_xgboost_model.pkl")
 except FileNotFoundError:
     raise RuntimeError("Модель не найдена. Проверьте путь к файлу")
-
-# Загрузка признаков из utils
-from src.utils import FEATURES
 
 app = FastAPI()
 
