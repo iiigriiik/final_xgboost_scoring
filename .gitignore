@@ -34,10 +34,6 @@ setuptools.pyc
 wheel*
 pip-wheel-metadata
 
-# Docker
-docker-compose*
-docker-build*
-Dockerfile*
 
 # PyInstaller
 *.manifest
