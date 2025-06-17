@@ -5,7 +5,7 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Копируем проект
-COPY твой проект в /app
+COPY models/models.pkl /app
 
 # Устанавливаем зависимости
 RUN pip install --no-cache-dir -r requirements.txt
