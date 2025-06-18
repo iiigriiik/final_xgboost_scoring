@@ -4,8 +4,8 @@ FROM python:3.9-slim
 # Рабочая директория внутри контейнера
 WORKDIR /app
 
-# Копируем проект
-COPY models/models.pkl /app
+# Копируем весь проект одним COPY . /app
+COPY . /app
 
 # Устанавливаем зависимости
 RUN pip install --no-cache-dir -r requirements.txt
